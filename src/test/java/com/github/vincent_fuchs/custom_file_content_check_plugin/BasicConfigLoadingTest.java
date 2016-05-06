@@ -38,9 +38,5 @@ public class BasicConfigLoadingTest extends AbstractMojoTestCase
 
         assertThat(myCheck.getFilesProvider()).isNotNull();
         assertThat(myCheck.getRulesToApply()).isNotNull();
-
-
-
-
     }
 }

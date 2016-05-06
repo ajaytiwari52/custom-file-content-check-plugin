@@ -35,7 +35,7 @@ public class CustomFileContentChecker extends AbstractMojo {
 
 		for(CheckToPerform checkToPerform : checksToPerform){
 
-			getLog().info("performing this check :" + checkToPerform.getName()+"...");
+			getLog().info("performing check named :" + checkToPerform.getName()+"...");
 
 			List<File> filesToCheck=checkToPerform.getFilesProvider().findFiles();
 
@@ -63,16 +63,12 @@ public class CustomFileContentChecker extends AbstractMojo {
 		}
 
 		if(!rulesCheckResults.toString().isEmpty()){
-			throw new MojoFailureException("some custom files content check have failed - see above logs for details");
+			throw new MojoFailureException("some custom files content check have failed - see above logs for details, or below for summary :\n"+rulesCheckResults.toString());
 		}
 		else{
 			getLog().info("All files are compliant with the custom checks defined");
 		}
-
-
 	}
-
-
 
 	public List<CheckToPerform> getChecksToPerform() {
 		return checksToPerform;
