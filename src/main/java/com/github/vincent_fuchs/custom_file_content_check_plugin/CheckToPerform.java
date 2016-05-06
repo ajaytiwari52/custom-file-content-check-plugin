@@ -1,12 +1,21 @@
 package com.github.vincent_fuchs.custom_file_content_check_plugin;
 
+import com.github.vincent_fuchs.custom_file_content_check_plugin.files_provider.FilesProvider;
+import com.github.vincent_fuchs.custom_file_content_check_plugin.rules_to_apply.RulesToApply;
+
 public class CheckToPerform {
 
     private String name;
 
-    private String filesProvider;
+    private FilesProvider filesProvider;
 
-    private String rulesToApply;
+    private RulesToApply rulesToApply;
+
+    public CheckToPerform(String name, FilesProvider filesProvider, RulesToApply rulesToApply) {
+        this.name=name;
+        this.filesProvider=filesProvider;
+        this.rulesToApply=rulesToApply;
+    }
 
     public String getName() {
         return name;
@@ -16,19 +25,19 @@ public class CheckToPerform {
         this.name = name;
     }
 
-    public String getFilesProvider() {
+    public FilesProvider getFilesProvider() {
         return filesProvider;
     }
 
-    public void setFilesProvider(String filesProvider) {
+    public void setFilesProvider(FilesProvider filesProvider) {
         this.filesProvider = filesProvider;
     }
 
-    public String getRulesToApply() {
+    public RulesToApply getRulesToApply() {
         return rulesToApply;
     }
 
-    public void setRulesToApply(String rulesToApply) {
+    public void setRulesToApply(RulesToApply rulesToApply) {
         this.rulesToApply = rulesToApply;
     }
 }

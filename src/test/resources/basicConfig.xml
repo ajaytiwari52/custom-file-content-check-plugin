@@ -20,8 +20,8 @@
 
                     <checkToPerform>
                         <name>some dummy check</name>
-                        <filesProvider>com.github.vincent_fuchs.custom_file_content_check_plugin.files_provider.SomeBasicFilesProvider</filesProvider>
-                        <rulesToApply>com.github.vincent_fuchs.custom_file_content_check_plugin.rules_to_apply.SomeBasicRulesToApply</rulesToApply>
+                        <filesProvider implementation="com.github.vincent_fuchs.custom_file_content_check_plugin.files_provider.SomeBasicFilesProvider"/>
+                        <rulesToApply implementation="com.github.vincent_fuchs.custom_file_content_check_plugin.rules_to_apply.SomeBasicRulesToApply"/>
                     </checkToPerform>
 
                 </checksToPerform>

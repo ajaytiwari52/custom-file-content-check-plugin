@@ -7,7 +7,7 @@ import java.io.File;
 import static org.assertj.core.api.Assertions.assertThat;
 
 
-public class BasicTest extends AbstractMojoTestCase
+public class BasicConfigLoadingTest extends AbstractMojoTestCase
 {
 
     protected void setUp() throws Exception
@@ -28,9 +28,19 @@ public class BasicTest extends AbstractMojoTestCase
         File pomFile = getTestFile( "src/test/resources/basicConfig.xml" );
         assertThat(pomFile).exists();
 
-        CustomFileContentChecker myMojo = (CustomFileContentChecker) lookupMojo( "checkFilesContent", pomFile );
-        assertNotNull( myMojo );
-        myMojo.execute();
+        CustomFileContentChecker myCustomFileContentChecker = (CustomFileContentChecker) lookupMojo( "checkFilesContent", pomFile );
+        assertNotNull( myCustomFileContentChecker );
+        myCustomFileContentChecker.execute();
+
+        assertThat(myCustomFileContentChecker.getChecksToPerform()).isNotEmpty();
+
+        CheckToPerform myCheck=myCustomFileContentChecker.getChecksToPerform().get(0);
+
+        assertThat(myCheck.getFilesProvider()).isNotNull();
+        assertThat(myCheck.getRulesToApply()).isNotNull();
+
+
+
 
     }
 }
