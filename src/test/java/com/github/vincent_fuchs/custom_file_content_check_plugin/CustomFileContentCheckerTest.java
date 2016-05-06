@@ -53,8 +53,6 @@ public class CustomFileContentCheckerTest {
     @Test
     public void shouldAnalyzeTheFilesThatAreFound() throws MojoFailureException, MojoExecutionException {
 
-
-
         customFileContentChecker.execute();
 
         verify(rulesToApply).performChecksOn(file1);

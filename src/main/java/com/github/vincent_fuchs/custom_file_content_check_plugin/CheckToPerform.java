@@ -11,6 +11,13 @@ public class CheckToPerform {
 
     private RulesToApply rulesToApply;
 
+    /*
+        default constructor used at runtime by Maven plugin
+     */
+    public CheckToPerform(){
+
+    }
+
     public CheckToPerform(String name, FilesProvider filesProvider, RulesToApply rulesToApply) {
         this.name=name;
         this.filesProvider=filesProvider;
